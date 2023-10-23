@@ -183,5 +183,14 @@
         private Button button2;
         private Button button1;
         private Panel panel2;
+        private EventHandler button1_Click;
+        private EventHandler button2_Click;
+        private EventHandler button3_Click;
+        private EventHandler button4_Click;
+        private EventHandler button7_Click;
+        private EventHandler button8_Click;
+        private EventHandler button9_Click;
+
+        public EventHandler PvP_Load { get; private set; }
     }
 }

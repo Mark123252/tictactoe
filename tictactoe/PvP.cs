@@ -7,16 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//PVP code here
+
 namespace tictactoe
 {
-   
-
     public partial class PvP : Form
     {
         private Button[] buttons = new Button[9];
-        
-        
+        private bool isPlayerOneTurn = true;
 
         public PvP()
         {
@@ -30,58 +27,98 @@ namespace tictactoe
             buttons[6] = button7;
             buttons[7] = button8;
             buttons[8] = button9;
-            //Common click event per button
-            for (int i = 0; i < buttons.Length; i++) {
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
                 buttons[i].Click += handleButtonclick;
                 buttons[i].Tag = i;
             }
-
         }
 
-        private void handleButtonclick(object? sender, EventArgs e)
+        private void handleButtonclick(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
-            MessageBox.Show("Button "+clickedButton.Tag + " was clicked");
+            int buttonIndex = (int)clickedButton.Tag;
+
+            if (clickedButton.Text != "" || CheckForWinner()) return;
+
+            if (isPlayerOneTurn)
+            {
+                clickedButton.Text = "X";
+            }
+            else
+            {
+                clickedButton.Text = "O";
+            }
+
+            isPlayerOneTurn = !isPlayerOneTurn;
+
+            if (CheckForWinner())
+            {
+                string winner = isPlayerOneTurn ? "O" : "X";
+                MessageBox.Show($"Player {winner} wins!");
+                ResetGame();
+            }
+            else if (IsBoardFull())
+            {
+                MessageBox.Show("It's a draw!");
+                ResetGame();
+            }
         }
 
-        private void PvP_Load(object sender, EventArgs e)
+        private bool CheckForWinner()
         {
+            // Check rows
+            for (int i = 0; i < 3; i++)
+            {
+                if (buttons[i * 3].Text != "" && buttons[i * 3].Text == buttons[i * 3 + 1].Text && buttons[i * 3].Text == buttons[i * 3 + 2].Text)
+                {
+                    return true;
+                }
+            }
 
+            // Check columns
+            for (int i = 0; i < 3; i++)
+            {
+                if (buttons[i].Text != "" && buttons[i].Text == buttons[i + 3].Text && buttons[i].Text == buttons[i + 6].Text)
+                {
+                    return true;
+                }
+            }
+
+            // Check diagonals
+            if (buttons[0].Text != "" && buttons[0].Text == buttons[4].Text && buttons[0].Text == buttons[8].Text)
+            {
+                return true;
+            }
+            if (buttons[2].Text != "" && buttons[2].Text == buttons[4].Text && buttons[2].Text == buttons[6].Text)
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private bool IsBoardFull()
         {
-
+            foreach (Button button in buttons)
+            {
+                if (button.Text == "")
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ResetGame()
         {
+            foreach (Button button in buttons)
+            {
+                button.Text = "";
+            }
 
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
+            isPlayerOneTurn = true;
         }
     }
 }
