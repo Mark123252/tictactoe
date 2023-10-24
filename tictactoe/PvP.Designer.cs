@@ -1,4 +1,4 @@
-﻿namespace tictactoe
+namespace tictactoe
 {
     partial class PvP
     {
@@ -28,169 +28,297 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            B9 = new Button();
+            B8 = new Button();
+            B7 = new Button();
+            B6 = new Button();
+            B5 = new Button();
+            B4 = new Button();
+            B3 = new Button();
+            B2 = new Button();
+            B1 = new Button();
+            panel2 = new Panel();
+            TB2 = new TextBox();
+            TB1 = new TextBox();
+            label1 = new Label();
+            L2 = new Label();
+            L1 = new Label();
+            B11 = new Button();
+            B10 = new Button();
+            B12 = new Button();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 396);
-            this.panel1.TabIndex = 0;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(B9);
+            panel1.Controls.Add(B8);
+            panel1.Controls.Add(B7);
+            panel1.Controls.Add(B6);
+            panel1.Controls.Add(B5);
+            panel1.Controls.Add(B4);
+            panel1.Controls.Add(B3);
+            panel1.Controls.Add(B2);
+            panel1.Controls.Add(B1);
+            panel1.Location = new Point(14, 63);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(518, 545);
+            panel1.TabIndex = 0;
+            // 
+            // B9
+            // 
+            B9.FlatAppearance.BorderSize = 3;
+            B9.FlatStyle = FlatStyle.Flat;
+            B9.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B9.Location = new Point(359, 364);
+            B9.Margin = new Padding(3, 4, 3, 4);
+            B9.Name = "B9";
+            B9.Size = new Size(143, 167);
+            B9.TabIndex = 8;
+            B9.UseVisualStyleBackColor = true;
+            B9.Click += button1_Click;
+            // 
+            // B8
+            // 
+            B8.FlatAppearance.BorderSize = 3;
+            B8.FlatStyle = FlatStyle.Flat;
+            B8.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B8.Location = new Point(189, 364);
+            B8.Margin = new Padding(3, 4, 3, 4);
+            B8.Name = "B8";
+            B8.Size = new Size(143, 167);
+            B8.TabIndex = 7;
+            B8.UseVisualStyleBackColor = true;
+            B8.Click += button1_Click;
+            // 
+            // B7
+            // 
+            B7.FlatAppearance.BorderSize = 3;
+            B7.FlatStyle = FlatStyle.Flat;
+            B7.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B7.Location = new Point(16, 364);
+            B7.Margin = new Padding(3, 4, 3, 4);
+            B7.Name = "B7";
+            B7.Size = new Size(143, 167);
+            B7.TabIndex = 6;
+            B7.UseVisualStyleBackColor = true;
+            B7.Click += button1_Click;
+            // 
+            // B6
+            // 
+            B6.FlatAppearance.BorderSize = 3;
+            B6.FlatStyle = FlatStyle.Flat;
+            B6.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B6.Location = new Point(359, 189);
+            B6.Margin = new Padding(3, 4, 3, 4);
+            B6.Name = "B6";
+            B6.Size = new Size(143, 167);
+            B6.TabIndex = 5;
+            B6.UseVisualStyleBackColor = true;
+            B6.Click += button1_Click;
+            // 
+            // B5
+            // 
+            B5.FlatAppearance.BorderSize = 3;
+            B5.FlatStyle = FlatStyle.Flat;
+            B5.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B5.Location = new Point(189, 189);
+            B5.Margin = new Padding(3, 4, 3, 4);
+            B5.Name = "B5";
+            B5.Size = new Size(143, 167);
+            B5.TabIndex = 4;
+            B5.UseVisualStyleBackColor = true;
+            B5.Click += button1_Click;
+            // 
+            // B4
+            // 
+            B4.FlatAppearance.BorderSize = 3;
+            B4.FlatStyle = FlatStyle.Flat;
+            B4.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B4.Location = new Point(16, 189);
+            B4.Margin = new Padding(3, 4, 3, 4);
+            B4.Name = "B4";
+            B4.Size = new Size(143, 167);
+            B4.TabIndex = 3;
+            B4.UseVisualStyleBackColor = true;
+            B4.Click += button1_Click;
+            // 
+            // B3
+            // 
+            B3.FlatAppearance.BorderSize = 3;
+            B3.FlatStyle = FlatStyle.Flat;
+            B3.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B3.Location = new Point(359, 8);
+            B3.Margin = new Padding(3, 4, 3, 4);
+            B3.Name = "B3";
+            B3.Size = new Size(143, 167);
+            B3.TabIndex = 2;
+            B3.UseVisualStyleBackColor = true;
+            B3.Click += button1_Click;
+            // 
+            // B2
+            // 
+            B2.FlatAppearance.BorderSize = 3;
+            B2.FlatStyle = FlatStyle.Flat;
+            B2.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B2.Location = new Point(189, 8);
+            B2.Margin = new Padding(3, 4, 3, 4);
+            B2.Name = "B2";
+            B2.Size = new Size(143, 167);
+            B2.TabIndex = 1;
+            B2.UseVisualStyleBackColor = true;
+            B2.Click += button1_Click;
+            // 
+            // B1
+            // 
+            B1.FlatAppearance.BorderColor = Color.Black;
+            B1.FlatAppearance.BorderSize = 3;
+            B1.FlatStyle = FlatStyle.Flat;
+            B1.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            B1.Location = new Point(16, 8);
+            B1.Margin = new Padding(3, 4, 3, 4);
+            B1.Name = "B1";
+            B1.Size = new Size(143, 167);
+            B1.TabIndex = 0;
+            B1.UseVisualStyleBackColor = true;
+            B1.Click += button1_Click;
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(472, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(169, 358);
-            this.panel2.TabIndex = 1;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(B12);
+            panel2.Controls.Add(TB2);
+            panel2.Controls.Add(TB1);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(L2);
+            panel2.Controls.Add(L1);
+            panel2.Controls.Add(B11);
+            panel2.Controls.Add(B10);
+            panel2.Location = new Point(539, 63);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(193, 545);
+            panel2.TabIndex = 1;
             // 
-            // button1
+            // TB2
             // 
-            this.button1.Location = new System.Drawing.Point(-2, -2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 125);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            TB2.Location = new Point(13, 178);
+            TB2.Name = "TB2";
+            TB2.Size = new Size(125, 27);
+            TB2.TabIndex = 6;
+            TB2.TextChanged += TB2_TextChanged;
             // 
-            // button2
+            // TB1
             // 
-            this.button2.Location = new System.Drawing.Point(155, -2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 125);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            TB1.Location = new Point(13, 98);
+            TB1.Name = "TB1";
+            TB1.Size = new Size(125, 27);
+            TB1.TabIndex = 5;
+            TB1.TextChanged += TB1_TextChanged;
             // 
-            // button3
+            // label1
             // 
-            this.button3.Location = new System.Drawing.Point(306, -2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 125);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Sitka Banner", 16.1999989F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(11, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 39);
+            label1.TabIndex = 4;
+            label1.Text = "Score:";
             // 
-            // button4
+            // L2
             // 
-            this.button4.Location = new System.Drawing.Point(-2, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 125);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            L2.AutoSize = true;
+            L2.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            L2.Location = new Point(11, 146);
+            L2.Name = "L2";
+            L2.Size = new Size(143, 29);
+            L2.TabIndex = 3;
+            L2.Text = "Player Two (O):";
+            L2.Click += L2_Click;
             // 
-            // button5
+            // L1
             // 
-            this.button5.Location = new System.Drawing.Point(155, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 125);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            L1.AutoSize = true;
+            L1.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            L1.Location = new Point(11, 66);
+            L1.Name = "L1";
+            L1.Size = new Size(139, 29);
+            L1.TabIndex = 2;
+            L1.Text = "Player One (X):";
+            L1.Click += L1_Click;
             // 
-            // button6
+            // B11
             // 
-            this.button6.Location = new System.Drawing.Point(306, 123);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 125);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            B11.Location = new Point(40, 445);
+            B11.Name = "B11";
+            B11.Size = new Size(116, 42);
+            B11.TabIndex = 1;
+            B11.Text = "Exit Game";
+            B11.UseVisualStyleBackColor = true;
+            B11.Click += B11_Click;
             // 
-            // button7
+            // B10
             // 
-            this.button7.Location = new System.Drawing.Point(-2, 254);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 125);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            B10.Location = new Point(40, 374);
+            B10.Name = "B10";
+            B10.Size = new Size(116, 42);
+            B10.TabIndex = 0;
+            B10.Text = "New Game";
+            B10.UseVisualStyleBackColor = true;
+            B10.Click += B10_Click;
             // 
-            // button8
+            // B12
             // 
-            this.button8.Location = new System.Drawing.Point(155, 254);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(125, 125);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(306, 254);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(125, 125);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            B12.Location = new Point(94, 7);
+            B12.Name = "B12";
+            B12.Size = new Size(83, 60);
+            B12.TabIndex = 7;
+            B12.Text = "Reset Score";
+            B12.UseVisualStyleBackColor = true;
+            B12.Click += B12_Click;
             // 
             // PvP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 505);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Name = "PvP";
-            this.Text = "PvP";
-            this.Load += new System.EventHandler(this.PvP_Load);
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(746, 673);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "PvP";
+            Text = "Player vs Player";
+            Load += PvP_Load;
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button B9;
+        private Button B8;
+        private Button B7;
+        private Button B6;
+        private Button B5;
+        private Button B4;
+        private Button B3;
+        private Button B2;
+        private Button B1;
         private Panel panel2;
-        private EventHandler button1_Click;
-        private EventHandler button2_Click;
-        private EventHandler button3_Click;
-        private EventHandler button4_Click;
-        private EventHandler button7_Click;
-        private EventHandler button8_Click;
-        private EventHandler button9_Click;
-
-        public EventHandler PvP_Load { get; private set; }
+        private Button B10;
+        private Button B11;
+        private TextBox TB1;
+        private Label label1;
+        private Label L2;
+        private Label L1;
+        private TextBox TB2;
+        private Button B12;
     }
 }
