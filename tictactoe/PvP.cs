@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,118 +7,158 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//PVP code here
 namespace tictactoe
 {
+
+
     public partial class PvP : Form
     {
+
+
         private Button[] buttons = new Button[9];
-        private bool isPlayerOneTurn = true;
+
+        char who = 'X';
+        short movement = 0;
+        int playerOneScore = 0;
+        int playerTwoScore = 0;
 
         public PvP()
         {
             InitializeComponent();
-            buttons[0] = button1;
-            buttons[1] = button2;
-            buttons[2] = button3;
-            buttons[3] = button4;
-            buttons[4] = button5;
-            buttons[5] = button6;
-            buttons[6] = button7;
-            buttons[7] = button8;
-            buttons[8] = button9;
+            buttons[0] = B1;
+            buttons[1] = B2;
+            buttons[2] = B3;
+            buttons[3] = B4;
+            buttons[4] = B5;
+            buttons[5] = B6;
+            buttons[6] = B7;
+            buttons[7] = B8;
+            buttons[8] = B9;
 
+            //Common click event per button
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i].Click += handleButtonclick;
                 buttons[i].Tag = i;
             }
+
+            TB1.Text = playerOneScore.ToString();
+            TB2.Text = playerTwoScore.ToString();
+
         }
 
-        private void handleButtonclick(object sender, EventArgs e)
+        private void handleButtonclick(object? sender, EventArgs e)
         {
-            Button clickedButton = (Button)sender;
-            int buttonIndex = (int)clickedButton.Tag;
-
-            if (clickedButton.Text != "" || CheckForWinner()) return;
-
-            if (isPlayerOneTurn)
-            {
-                clickedButton.Text = "X";
-            }
-            else
-            {
-                clickedButton.Text = "O";
-            }
-
-            isPlayerOneTurn = !isPlayerOneTurn;
-
-            if (CheckForWinner())
-            {
-                string winner = isPlayerOneTurn ? "O" : "X";
-                MessageBox.Show($"Player {winner} wins!");
-                ResetGame();
-            }
-            else if (IsBoardFull())
-            {
-                MessageBox.Show("It's a draw!");
-                ResetGame();
-            }
+            movement++;
         }
 
-        private bool CheckForWinner()
+        private void PvP_Load(object sender, EventArgs e)
         {
-            // Check rows
-            for (int i = 0; i < 3; i++)
-            {
-                if (buttons[i * 3].Text != "" && buttons[i * 3].Text == buttons[i * 3 + 1].Text && buttons[i * 3].Text == buttons[i * 3 + 2].Text)
-                {
-                    return true;
-                }
-            }
 
-            // Check columns
-            for (int i = 0; i < 3; i++)
-            {
-                if (buttons[i].Text != "" && buttons[i].Text == buttons[i + 3].Text && buttons[i].Text == buttons[i + 6].Text)
-                {
-                    return true;
-                }
-            }
-
-            // Check diagonals
-            if (buttons[0].Text != "" && buttons[0].Text == buttons[4].Text && buttons[0].Text == buttons[8].Text)
-            {
-                return true;
-            }
-            if (buttons[2].Text != "" && buttons[2].Text == buttons[4].Text && buttons[2].Text == buttons[6].Text)
-            {
-                return true;
-            }
-
-            return false;
         }
 
-        private bool IsBoardFull()
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            bt.Enabled = false;
+            bt.BackColor = Color.White;
+            if (who == 'X')
+            {
+                bt.Text = "X";
+                if ((B1.Text == B2.Text && B2.Text == B3.Text && B2.Text != "") ||
+                    (B4.Text == B5.Text && B5.Text == B6.Text && B5.Text != "") ||
+                    (B7.Text == B8.Text && B8.Text == B9.Text && B8.Text != "") ||
+                    (B1.Text == B4.Text && B4.Text == B7.Text && B4.Text != "") ||
+                    (B2.Text == B5.Text && B5.Text == B8.Text && B5.Text != "") ||
+                    (B3.Text == B6.Text && B6.Text == B9.Text && B6.Text != "") ||
+                    (B1.Text == B5.Text && B5.Text == B9.Text && B5.Text != "") ||
+                    (B3.Text == B5.Text && B5.Text == B7.Text && B5.Text != ""))
+                {
+                    MessageBox.Show($"Player One (X) wins!");
+                    playerOneScore++;
+                    TB1.Text = playerOneScore.ToString();
+                    panel1.Enabled = false;
+                }
+                else if (movement == 8)
+                {
+                    MessageBox.Show("Draw !!!");
+                }
+                who = 'O';
+
+            }
+            else if (who == 'O')
+            {
+                bt.Text = "O";
+                if ((B1.Text == B2.Text && B2.Text == B3.Text && B2.Text != "") ||
+                    (B4.Text == B5.Text && B5.Text == B6.Text && B5.Text != "") ||
+                    (B7.Text == B8.Text && B8.Text == B9.Text && B8.Text != "") ||
+                    (B1.Text == B4.Text && B4.Text == B7.Text && B4.Text != "") ||
+                    (B2.Text == B5.Text && B5.Text == B8.Text && B5.Text != "") ||
+                    (B3.Text == B6.Text && B6.Text == B9.Text && B6.Text != "") ||
+                    (B1.Text == B5.Text && B5.Text == B9.Text && B5.Text != "") ||
+                    (B3.Text == B5.Text && B5.Text == B7.Text && B5.Text != ""))
+                {
+                    MessageBox.Show($"Player Two (O) wins!");
+                    playerTwoScore++;
+                    TB2.Text = playerTwoScore.ToString();
+                    panel1.Enabled = false;
+                }
+                else if (movement == 8)
+                {
+                    MessageBox.Show("Draw !!!");
+                }
+                who = 'X';
+            }
+        }
+
+        private void L1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void L2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TB2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void B10_Click(object sender, EventArgs e)
         {
             foreach (Button button in buttons)
             {
-                if (button.Text == "")
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private void ResetGame()
-        {
-            foreach (Button button in buttons)
-            {
+                button.Enabled = true;
                 button.Text = "";
+                button.BackColor = SystemColors.Control;
             }
 
-            isPlayerOneTurn = true;
+            who = 'X';
+            movement = 0;
+            panel1.Enabled = true;
+
+        }
+
+        private void TB1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void B11_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Close the application
+
+        }
+
+        private void B12_Click(object sender, EventArgs e)
+        {
+            playerOneScore = 0;
+            playerTwoScore = 0;
+            TB1.Text = playerOneScore.ToString();
+            TB2.Text = playerTwoScore.ToString();
         }
     }
 }
